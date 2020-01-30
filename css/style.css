@@ -1,30 +1,227 @@
-body{
+@charset "UTF-8";
+/*-----------------------------------------------------
+Auteur : Maximilien Galuret
+Description : Première interface web avec Sass
 
-    font-family: Arial;
-    background-color: gainsboro;
+---- Table des matières ----
+INDEX des fichiers SCSS
+#Variables
+#Menu
+#Layout
+
+/*------------------------------------------------------
+# Variables
+-----------------------------------------------------*/
+/*------------------------------------------------------
+# Menu
+-----------------------------------------------------*/
+#check_menu:checked ~ ul {
+  height: 140px;
 }
 
-h1{
-
-    font-family: Arial;
-    font-size: 20px;
+#bouton_menu {
+  cursor: pointer;
 }
 
-header{
-
-    border:1px solid red;
-    background-color: aqua;
+#check_menu:checked ~ label {
+  -webkit-animation: jello-horizontal 0.8s both;
+          animation: jello-horizontal 0.8s both;
 }
 
-footer{
-
-    border:1px solid green;
-    background-color: blanchedalmond;
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
-main{
-
-    border:1px solid yellow;
-    background-color: cornflowerblue;
-
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
+
+#bouton_menu {
+  color: #ffff;
+  font-size: 2em;
+}
+
+input {
+  display: none;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #e9e9e9;
+  text-align: center;
+  display: block;
+  padding: 3px;
+}
+
+nav ul li a:hover {
+  background-color: #f2c5c5;
+}
+
+@media screen and (min-width: 501px) {
+  nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  nav ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  nav ul li a {
+    text-decoration: none;
+  }
+  #bouton_menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav, ul, li {
+    display: none;
+  }
+  #check_menu:checked ~ ul nav, #check_menu:checked ~ ul ul, #check_menu:checked ~ ul li {
+    display: block;
+  }
+}
+
+/*------------------------------------------------------
+# Footer
+-----------------------------------------------------*/
+@media screen and (min-width: 501px) {
+  footer .global {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 501px) {
+  footer {
+    display: block;
+  }
+}
+
+/*----------------------------------------------------
+# Layout
+-----------------------------------------------------*/
+body {
+  width: 100vw;
+  font-family: Montserrat;
+}
+
+header,
+nav,
+main,
+footer {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header, footer {
+  background-color: #e89c9c;
+}
+
+nav {
+  background-color: #d64848;
+}
+
+main {
+  background-color: white;
+}
+
+.global {
+  width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+  .global {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

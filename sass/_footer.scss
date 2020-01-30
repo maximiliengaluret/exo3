@@ -1,0 +1,22 @@
+@media screen and (min-width : 501px){
+   
+    
+    footer .global{
+
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+    }
+    
+}
+
+@media screen and (max-width : 501px){
+   
+    
+    footer {
+
+        display: block;
+     }
+    
+}
+

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*-----------------------------------------------------
+Auteur : Maximilien Galuret
+Description : Première interface web avec Sass
+
+---- Table des matières ----
+------------------------------------------------------
+INDEX des fichiers SCSS
+------------------------------------------------------
+# Variables
+-----------------------------------------------------*/
+/*----------------------------------------------------
+# Layout
+-----------------------------------------------------*/
+body {
+  width: 100vw;
+}
+
+header,
+nav,
+main,
+footer {
+  width: 100vw;
+}
+
+.global {
+  width: 95%;
+  border: 1px solid #aaa;
+}
+
+@media screen and (min-width: 600px) {
+  .global {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

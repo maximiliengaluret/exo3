@@ -1,0 +1,42 @@
+body {
+
+    width: 100vw;
+    font-family: $police;
+}
+header,
+nav,
+main,
+footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+header, footer{
+
+    background-color: lighten($couleur_rouge, 10%);
+}
+
+nav{
+
+    background-color: darken($couleur_rouge, 10%);
+}
+
+main{
+
+    background-color: lighten($couleur_rouge, 50%);
+}
+.global {
+
+    width: 95%;
+  
+}
+
+@media screen and (min-width:600px) {
+
+    .global {
+
+        width: 80%;
+    }
+
+}
